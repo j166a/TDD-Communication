@@ -16,4 +16,13 @@ public class SumASCIITests
         int output = SumASCII.SumASCIICodes(input);
         output.ShouldBe(expected);
     }
+    [TestCase("northcoders", 1195)]
+    [TestCase("Northcoders", 1163)]
+    public void SumASCIICodes_ShouldReturnASCIIValue_WhenPassedAString(string input, int expected)
+    {
+        int output = SumASCII.SumASCIICodes(input);
+
+        output.ShouldBe(expected);
+    }
+
 }

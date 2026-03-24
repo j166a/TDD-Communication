@@ -11,7 +11,15 @@ namespace TDD_Communication
         public static int SumASCIICodes(string input)
         {
             if (input.Length == 1) { return (int)input[0]; }
-            return 0;
+
+            int counter = 0;
+
+            foreach (char letter in input)
+            {
+                counter += (int)letter;
+            }
+
+            return counter;
         }
     }
 }
