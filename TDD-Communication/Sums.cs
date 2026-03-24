@@ -8,6 +8,10 @@ namespace TDD_Communication
 {
     public class Sums
     {
-
+        public static int[] SumNumbers(int[] input)
+        {
+            Array.Sort(input);
+            return input;
+        }
     }
 }
