@@ -14,9 +14,11 @@ namespace TDD_Communication
 
             if (input.Count() == 1) { return input[0]; }
 
-            if (input.Count() == 2) { return Outcome.NEUTRAL; }
+            //if (input.Count() % 2 == 0) { return Outcome.NEUTRAL; } // this is the default return so it can be removed.
 
-            return 0;
+            if (input.Count() % 2 == 1) { return input[^1]; }
+
+            return Outcome.NEUTRAL;
         }
     }
 }
