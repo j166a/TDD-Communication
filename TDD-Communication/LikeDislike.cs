@@ -8,9 +8,13 @@ namespace TDD_Communication
 {
     public class LikeDislike
     {
-        public static Outcome LikeDislikeNeutral(Outcome input)
+        public static Outcome LikeDislikeNeutral(List<Outcome> input)
         {
-            return input;
+
+            if (input.Count() == 1) { return input[0]; }
+
+            
+            return 0;
         }
     }
 }

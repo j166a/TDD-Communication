@@ -9,11 +9,29 @@ public class LikeDislikeTests
     {
     }
 
-    [TestCase(Outcome.LIKE, Outcome.LIKE)]
-    [TestCase(Outcome.DISLIKE, Outcome.DISLIKE)]
-    public void LikeDislikeNeutral_ShouldReturnInput_WhenPassedOneInput(Outcome input, Outcome expected)
+    [Test]
+    public void LikeDislikeNeutral_ShouldReturnLIKE_WhenPassedOneLIKE()
     {
-        Outcome output = LikeDislike.LikeDislikeNeutral(input);
-        output.ShouldBe(expected);
+        List<Outcome> testInputSequence = new List<Outcome>();
+        testInputSequence.Add(Outcome.LIKE);
+
+        Outcome output = LikeDislike.LikeDislikeNeutral(testInputSequence);
+        output.ShouldBe(Outcome.LIKE);
     }
+
+
+
+    [Test]
+    public void LikeDislikeNeutral_ShouldReturnNEUTRAL_WhenPassedOneLIKEOneDISLIKE()
+    {
+        List<Outcome> testInputSequence = new List<Outcome>();
+        testInputSequence.Add(Outcome.LIKE);
+        testInputSequence.Add(Outcome.DISLIKE);
+
+
+        Outcome output = LikeDislike.LikeDislikeNeutral(testInputSequence);
+        output.ShouldBe(Outcome.NEUTRAL);
+    }
+
+
 }
